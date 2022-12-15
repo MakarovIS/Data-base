@@ -2,11 +2,16 @@ CREATE TABLE hall (
 	hall_id INTEGER PRIMARY KEY NOT NULL,
 	hall_name VARCHAR(50));
 
-CREATE TABLE actor (
-	actor_id INTEGER PRIMARY KEY NOT NULL,
-	actor_name_and_surname VARCHAR2(50),
-	actor_date_of_birth DATE,
-	actor_experience VARCHAR(2));
+CREATE TABLE post (
+	post_id INTEGER PRIMARY KEY NOT NULL,
+	post_name VARCHAR(50));
+
+CREATE TABLE worker (
+	worker_id INTEGER PRIMARY KEY NOT NULL,
+	worker_surname VARCHAR(50),
+	worker_name VARCHAR(50),
+	worker_date_of_birth DATE,
+	worker_experience VARCHAR(2));
 
 CREATE TABLE genre (
 	genre_id INTEGER PRIMARY KEY NOT NULL
