@@ -25,7 +25,7 @@ CREATE TABLE spetacle (
 
 CREATE TABLE employment_of_actors (
 	contract_id INTEGER PRIMARY KEY NOT NULL,
-	actor_id INTEGER,
+	worker_id INTEGER,
 	spetacle_id INTEGER,
 	role_actor VARCHAR(50));
 
