@@ -9,13 +9,13 @@ class Workers(BaseModel):
     date_of_birth: str
     experience: Optional[str]
 
-class Spectacle(BaseModel):
+class Spectacles(BaseModel):
     id: int
     name: str
     genre: str
     length: int
 
-class Speech(BaseModel):
+class Speechs(BaseModel):
     id: int
     spectacle_id: int
     hall: str
@@ -27,13 +27,13 @@ class Employment_of_actors(BaseModel):
     spectacle_id: int
     role_actor: str
 
-class Ticket_price_category(BaseModel):
+class Ticket_price_categories(BaseModel):
     id: int
     hall: str
     row: str
     price: int
 
-class Ticket(BaseModel):
+class Tickets(BaseModel):
     id: int
     ticket_price_category_id: int
     speech_id: int

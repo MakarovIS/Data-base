@@ -24,7 +24,7 @@ def get_worker(wrk_id: int):
 
 @wrk_router.put('/{wrk_id}')
 def update_worker(wrk_id: int):
-    return f'Update student {wrk_id}'
+    return f'Update worker {wrk_id}'
 
 
 @wrk_router.delete('/{wrk_id}')
