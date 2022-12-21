@@ -2,7 +2,11 @@ from fastapi import FastAPI
 from sql_base import base_worker
 from settings import BASE_PATH
 from routers.workers import wrk_router
-
+from routers.spectacles import spec_router
+from routers.speechs import spch_router
+from routers.employment_of_actors import eoa_router
+from routers.ticket_price_categories import tpc_router
+from routers.tickets import tick_router
 
 base_worker.set_base_path(BASE_PATH)
 
@@ -18,4 +22,11 @@ def main_page():
 
 
 app.include_router(wrk_router, prefix='/workers')
+app.include_router(spec_router, prefix='/spectacles')
+app.include_router(spch_router, prefix='/speechs')
+app.include_router(eoa_router, prefix='/employment_of_actors')
+app.include_router(tpc_router, prefix='/ticket_price_categories')
+app.include_router(tick_router, prefix='/tickets')
+
+
 
