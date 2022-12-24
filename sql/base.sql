@@ -1,23 +1,23 @@
-CREATE TABLE hall (
+CREATE TABLE halls (
 	hall_id INTEGER PRIMARY KEY NOT NULL,
 	hall_name VARCHAR(50));
 
-CREATE TABLE post (
+CREATE TABLE posts (
 	post_id INTEGER PRIMARY KEY NOT NULL,
 	post_name VARCHAR(50));
 
-CREATE TABLE worker (
+CREATE TABLE workers (
 	worker_id INTEGER PRIMARY KEY NOT NULL,
 	worker_surname VARCHAR(50),
 	worker_name VARCHAR(50),
 	worker_date_of_birth DATE,
 	worker_experience VARCHAR(2));
 
-CREATE TABLE genre (
-	genre_id INTEGER PRIMARY KEY NOT NULL
+CREATE TABLE genres (
+	genre_id INTEGER PRIMARY KEY NOT NULL,
 	genre_name VARCHAR(50));
 
-CREATE TABLE spetacle (
+CREATE TABLE spetacles (
 	spetacle_id INTEGER PRIMARY KEY NOT NULL,
 	spetacle_name VARCHAR(50),
 	genre_id INTEGER,
@@ -29,21 +29,21 @@ CREATE TABLE employment_of_actors (
 	spetacle_id INTEGER,
 	role_actor VARCHAR(50));
 
-CREATE TABLE speech (
+CREATE TABLE speechs (
 	speech_id INTEGER PRIMARY KEY NOT NULL,
 	spetacle_id INTEGER,
 	hall_id INTEGER,
 	speech_date DATE,
 	speech_time TIME);
 	
-CREATE TABLE category (
+CREATE TABLE categories (
 	category_id INTEGER PRIMARY KEY NOT NULL,
 	hall_id INTEGER,
 	category_row VARCHAR(3),
 	category_price INTEGER);
 
-CREATE TABLE ticket (
-	ticket_id INTEGER PRIMARY KEY NOY NULL,
+CREATE TABLE tickets (
+	ticket_id INTEGER PRIMARY KEY NOT NULL,
 	category_id INTEGER,
 	speech_id INTEGER,
 	ticket_status BOOLEAN);

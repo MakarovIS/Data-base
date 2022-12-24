@@ -19,7 +19,7 @@ def new_spectacle(spectacle: Spectacles,):
 @spec_router.get('/{spec_id}')
 def get_worker(spec_id: int):
     spectacle = resolvers.get_spectacle(spec_id)
-    return f'Spectacle: {{name: имя, genre: жанр, id: {spec_id}}}'
+    return f'Spectacle: {{name: название, genre: жанр, id: {spec_id}}}'
 
 
 @spec_router.put('/{spec_id}')
