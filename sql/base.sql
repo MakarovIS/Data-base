@@ -1,49 +1,57 @@
 CREATE TABLE halls (
-	hall_id INTEGER PRIMARY KEY NOT NULL,
-	hall_name VARCHAR(50));
+	id INTEGER PRIMARY KEY NOT NULL,
+	name VARCHAR(50));
 
 CREATE TABLE posts (
-	post_id INTEGER PRIMARY KEY NOT NULL,
-	post_name VARCHAR(50));
+	id INTEGER PRIMARY KEY NOT NULL,
+	name VARCHAR(50));
 
 CREATE TABLE workers (
-	worker_id INTEGER PRIMARY KEY NOT NULL,
-	worker_surname VARCHAR(50),
-	worker_name VARCHAR(50),
-	worker_date_of_birth DATE,
-	worker_experience VARCHAR(2));
+	id INTEGER PRIMARY KEY NOT NULL,
+	surname VARCHAR(50),
+	name VARCHAR(50),
+	date_of_birth DATE,
+	experience VARCHAR(2));
 
 CREATE TABLE genres (
-	genre_id INTEGER PRIMARY KEY NOT NULL,
-	genre_name VARCHAR(50));
+	id INTEGER PRIMARY KEY NOT NULL,
+	name VARCHAR(50));
 
-CREATE TABLE spetacles (
-	spetacle_id INTEGER PRIMARY KEY NOT NULL,
-	spetacle_name VARCHAR(50),
+CREATE TABLE spectacles (
+	id INTEGER PRIMARY KEY NOT NULL,
+	name VARCHAR(50),
 	genre_id INTEGER,
-	spetacle_length INTEGER);
+	lengths INTEGER);
 
 CREATE TABLE employment_of_actors (
-	contract_id INTEGER PRIMARY KEY NOT NULL,
+	id INTEGER PRIMARY KEY NOT NULL,
 	worker_id INTEGER,
-	spetacle_id INTEGER,
+	spectacle_id INTEGER,
 	role_actor VARCHAR(50));
 
 CREATE TABLE speechs (
-	speech_id INTEGER PRIMARY KEY NOT NULL,
-	spetacle_id INTEGER,
+	id INTEGER PRIMARY KEY NOT NULL,
+	spectacle_id INTEGER,
 	hall_id INTEGER,
-	speech_date DATE,
-	speech_time TIME);
+	date_and_time DATETIME);
 	
-CREATE TABLE categories (
-	category_id INTEGER PRIMARY KEY NOT NULL,
+CREATE TABLE ticket_price_categories (
+	id INTEGER PRIMARY KEY NOT NULL,
 	hall_id INTEGER,
-	category_row VARCHAR(3),
-	category_price INTEGER);
+	row VARCHAR(3),
+	price INTEGER);
 
 CREATE TABLE tickets (
-	ticket_id INTEGER PRIMARY KEY NOT NULL,
-	category_id INTEGER,
+	id INTEGER PRIMARY KEY NOT NULL,
+	ticket_price_category_id INTEGER,
 	speech_id INTEGER,
-	ticket_status BOOLEAN);
+	status BOOLEAN);
+
+INSERT INTO halls(id, name)
+VALUES (1, 'Main'), (2, "Secondary");
+
+INSERT INTO tickets(id, ticket_price_category_id, speech_id, status)
+VALUES (1, 2, 3, FALSE);
+
+INSERT INTO speechs(id, spectacle_id, hall_id, date_and_time)
+VALUES (1, 2, 3, '2000-12-12 15:15:30');
