@@ -24,10 +24,16 @@ class BaseWorker:
             finally:
                 connection.close()
 
-    def insert_data(self, query: str, args: tuple[str]):
+    def execute(self, query: str, args: tuple[str], many: bool):
         connection = sqlite3.connect(self.base_path, isolation_level=None)
         cur = connection.cursor()
-        res = cur.execute(query, args).fetchone()
+        res_ctx = cur.execute(query, args)
+        if not res_ctx:
+            return None
+        if many:
+            res = res_ctx.fetchall()
+        else:
+            res = res_ctx.fetchone()
         connection.commit()
         connection.close()
         return res

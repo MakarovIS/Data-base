@@ -10,7 +10,7 @@ CREATE TABLE workers (
 	id INTEGER PRIMARY KEY NOT NULL,
 	surname VARCHAR(50),
 	name VARCHAR(50),
-	date_of_birth DATE,
+	date_of_birth VARCHAR(12),
 	experience VARCHAR(2));
 
 CREATE TABLE genres (
